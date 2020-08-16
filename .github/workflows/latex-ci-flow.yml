@@ -26,7 +26,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: main.pdf_${{ github.sha }}
-          path: /main.pdf
+          path: ./main.pdf
           
       - name: Get Tag Version
         run: |
