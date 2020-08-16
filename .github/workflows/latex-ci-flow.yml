@@ -22,11 +22,11 @@ jobs:
           compiler: latexmk
           args: '-cd -r ./.latexmkrc -f -gg'
         
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: main.pdf_${{ github.sha }}
-          path: ./main.pdf
+#       - name: Upload artifact
+#         uses: actions/upload-artifact@v2
+#         with:
+#           name: main.pdf_${{ github.sha }}
+#           path: ./main.pdf
           
       - name: Get Tag Version
         run: |
@@ -40,16 +40,16 @@ jobs:
 #     needs: build
 #     runs-on: ubuntu-latest
 #     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: main.pdf_${{ github.sha }}
+#       - name: Download artifact
+#         uses: actions/download-artifact@v2
+#         with:
+#           name: main.pdf_${{ github.sha }}
       
-      - name: uncompress artifact
-        run: |
-          ls -lha
-          unzip main.pdf_${{ github.sha }}
-          rm -f main.pdf_${{ github.sha }}
+#       - name: uncompress artifact
+#         run: |
+#           ls -lha
+#           unzip main.pdf_${{ github.sha }}
+#           rm -f main.pdf_${{ github.sha }}
         
 #       - uses: actions/checkout@v2
         
