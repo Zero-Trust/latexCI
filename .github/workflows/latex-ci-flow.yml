@@ -43,7 +43,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v2
         with:
-        name: main.pdf_${{ github.sha }}
+          name: main.pdf_${{ github.sha }}
         
       - name: Create Release
         id: create_release
