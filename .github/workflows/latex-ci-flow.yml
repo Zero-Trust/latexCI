@@ -50,6 +50,8 @@ jobs:
 #           ls -lha
 #           unzip main.pdf_${{ github.sha }}
 #           rm -f main.pdf_${{ github.sha }}
+      - uses: actions/checkout@v2
+        
       - name: create test file
         run: |
           echo "world" > hello.txt 
