@@ -85,6 +85,7 @@ jobs:
     
   remote-upload:
     name: Upload a file to Another Repository
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
