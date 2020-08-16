@@ -82,3 +82,21 @@ jobs:
           asset_path: ./main.pdf
           asset_name: main.pdf
           asset_content_type: application/pdf
+    
+  remote-upload:
+    name: Upload a file to Another Repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v2
+        
+      - name: Push a file to another repository
+        uses: huyu-no-yozora/pushAnotherRepo@master
+        with:
+          deploy-token: ${{ secrets.GH_DEPLOY_TOKEN }}
+          upload-file: 'main.pdf'
+          destination-username: 'Zero-Trust'
+          destination-repository: 'pdf'
+          user-email: '62760177+Zero-Trust@users.noreply.github.com'
+          target-directory: 'Notes'
+        
