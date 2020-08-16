@@ -54,7 +54,7 @@ jobs:
         
       - name: create test file
         run: |
-          echo "world" > hello.txt 
+          echo "world" > hello.pdf
         
       - name: Create Release
         id: create_release
