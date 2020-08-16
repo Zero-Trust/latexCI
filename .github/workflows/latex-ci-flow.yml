@@ -40,16 +40,19 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: main.pdf_${{ github.sha }}
+#       - name: Download artifact
+#         uses: actions/download-artifact@v2
+#         with:
+#           name: main.pdf_${{ github.sha }}
       
-      - name: uncompress artifact
+#       - name: uncompress artifact
+#         run: |
+#           ls -lha
+#           unzip main.pdf_${{ github.sha }}
+#           rm -f main.pdf_${{ github.sha }}
+      - name: create test file
         run: |
-          ls -lha
-          unzip main.pdf_${{ github.sha }}
-          rm -f main.pdf_${{ github.sha }}
+          echo "world" > hello.txt 
         
       - name: Create Release
         id: create_release
